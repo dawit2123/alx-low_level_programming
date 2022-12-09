@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 /**
- * main - Random number Assigner 
+ * main - Random number Assigner
  *
  * Return: Always 0 (Success)
  */
