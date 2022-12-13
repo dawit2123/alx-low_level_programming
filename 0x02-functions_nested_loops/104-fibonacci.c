@@ -1,7 +1,7 @@
 #include<stdio.h>
 
 /**
- * main - prints the first 50 Fibonacci numbers.
+ * main - prints the first 50 Fibonacci number
  *
  * Return: void.
  */
@@ -9,6 +9,7 @@ int main(void)
 {
 	unsigned long int num1, num10, num11, number2;
     unsigned long int number20, number21, e, e0, e1, y, num3;
+
 	num1 = 1;
 	number2 = 2;
 	e = num1 + number2;
