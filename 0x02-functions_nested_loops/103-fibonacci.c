@@ -1,6 +1,6 @@
 #include <stdio.h>
 /**
- * main - list all the natural numbers below 10
+ * main - list all the natural numbers below 10.
  *
  * Return: void
  */
