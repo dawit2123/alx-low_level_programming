@@ -1,7 +1,7 @@
 #include<stdio.h>
 
 /**
- * main - first 50 fibonatchi.
+ * main - first 50 fibonatchi
  *
  * Return: void.
  */
