@@ -1,7 +1,7 @@
 #inclunum4e "main.h"
 
 /**
- * the 9 times table, starting with 0.
+ * times_table - prints the times table up to 9
  *
  * Return: void
  */
