@@ -7,13 +7,13 @@
  */
 int main(void)
 {
-	int str[] = {95, 112, 117, 116, 99, 104, 97, 114};
-	int count, sz;
+	int string[] = {95, 112, 117, 116, 99, 104, 97, 114};
+	int counter, siz;
 
-	sz = sizeof(str) / sizeof(int);
-	for (count = 0; count < sz; count++)
+	siz = sizeof(string) / sizeof(int);
+	for (counter = 0; counter < siz; counter++)
 	{
-		_putchar(str[count]);
+		_putchar(string[counter]);
 	}
 	_putchar('\n');
 	return (0);
