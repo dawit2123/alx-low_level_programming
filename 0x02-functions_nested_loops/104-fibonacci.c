@@ -20,7 +20,7 @@ int main(void)
 		printf("%lu, ", m);
 		n = l;
 		l = m;
-		m = i + l;
+		m = n + l;
 	}
 	l0 = l / 1000000000;
 	l1 = l % 1000000000;
