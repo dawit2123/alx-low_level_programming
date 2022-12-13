@@ -1,4 +1,4 @@
-#inclunum4e "main.h"
+#include "main.h"
 
 /**
  * times_table - prints the times table up to 9
@@ -8,30 +8,30 @@
 
 void times_table(void)
 {
-	int num1, num2, num3, num4, num5;
+	int j,i,e,d,y;
 
-	for (num1 = 0; num1 < 10; num1++)
+	for (i = 0; i < 10; i++)
 	{
-		for (num2 = 0; num2 < 10; num2++)
+		for (j = 0; j < 10; j++)
 		{
-			num3 = num1 * num2;
-			num4 = num3 / 10;
-			num5 = num3 % 10;
-			if (num2 == 0)
+			y = i * j;
+			d = y / 10;
+			e = y % 10;
+			if (j == 0)
 			{
 				_putchar('0');
 			}
-			else if (num3 < 10)
+			else if (y < 10)
 			{
 				_putchar(' ');
-				_putchar('0' + num5);
+				_putchar('0' + e);
 			}
 			else
 			{
-				_putchar('0' + num4);
-				_putchar('0' + num5);
+				_putchar('0' + d);
+				_putchar('0' + e);
 			}
-			if (num2 < 9)
+			if (j < 9)
 			{
 				_putchar(',');
 				_putchar(' ');
