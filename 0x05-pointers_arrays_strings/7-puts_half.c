@@ -10,9 +10,9 @@ void puts_half(char *str)
 	int number1, number2;
 
 	number1 = 0;
-	while (str[i])
+	while (str[number1])
 		number1++;
-	number2 = i / 2;
+	number2 = number1 / 2;
 	if (i % 2)
 		number2 += 1;
 	while (number2 < number1)
