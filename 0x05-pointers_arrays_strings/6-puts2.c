@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * puts2 - prints every other character of a string in new line
+ * puts2 - prints every other character of a string in new line.
  * @str:pointer char
  * return:void
  */
@@ -12,9 +12,9 @@ number1 = 0;
 number2 = 0;
 	while (str[number1++])
 	{
-		number1++;
+		number2++;
 	}
-for (number1 = 0; number1 < x; number1 += 2)
+for (number1 = 0; number1 < number2; number1 += 2)
 {
 _putchar(*(str + number1));
 }
