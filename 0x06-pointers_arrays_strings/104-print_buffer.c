@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 /**
- * print_buffer - Prints a buffer
+ * print_buffer - Prints a buffer in the output
  * @b: char
  * @size: int
  * Return:void
