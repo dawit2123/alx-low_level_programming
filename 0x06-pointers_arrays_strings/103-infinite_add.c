@@ -10,37 +10,37 @@
  */
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-int i, b, k, l, m, n;
+int a, b, c, d, e, n;
 
-	for (i = 0; n1[i]; i++)
+	for (a = 0; n1[a]; a++)
 		;
 	for (b = 0; n2[b]; b++)
 		;
-	if (i > size_r || b > size_r)
+	if (a > size_r || b > size_r)
 		return (0);
-	m = 0;
-	for (i -= 1, b -= 1, k = 0; k < size_r - 1; i--, b--, k++)
+	c = 0;
+	for (a -= 1, b -= 1, e = 0; e < size_r - 1; a--, b--, e++)
 	{
-		n = m;
-		if (i >= 0)
-			n += n1[i] - '0';
+		n = c;
+		if (a >= 0)
+			n += n1[a] - '0';
 		if (b >= 0)
 			n += n2[b] - '0';
-		if (i < 0 && b < 0 && n == 0)
+		if (a < 0 && b < 0 && n == 0)
 		{
 			break;
 		}
-		m = n / 10;
-		r[k] = n % 10 + '0';
+		c = n / 10;
+		r[e] = n % 10 + '0';
 	}
-	r[k] = '\0';
-	if (i >= 0 || b >= 0 || m)
+	r[e] = '\0';
+	if (i >= 0 || b >= 0 || c)
 		return (0);
-	for (k -= 1, l = 0; l < k; k--, l++)
+	for (e -= 1, d = 0; d < e; e--, d++)
 	{
-		m = r[k];
-		r[k] = r[l];
-		r[l] = m;
+		c = r[e];
+		r[e] = r[d];
+		r[l] = c;
 	}
 	return (r);
 }
