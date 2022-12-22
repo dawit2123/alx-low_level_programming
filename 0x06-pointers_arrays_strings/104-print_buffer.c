@@ -9,19 +9,19 @@
  */
 void print_buffer(char *b, int size)
 {
-	int number, i;
+	int c, i;
 
-	for (number = 0; number < size; number += 10)
+	for (c = 0; c < size; c += 10)
 	{
-		printf("%08number: ", number);
+		printf("%08c: ", c);
 
 		for (i = 0; i < 10; i++)
 		{
-			if ((i + number) >= size)
+			if ((i + c) >= size)
 				printf("  ");
 
 			else
-				printf("%02number", *(b + i + number));
+				printf("%02c", *(b + i + c));
 
 			if ((i % 2) != 0 && i != 0)
 				printf(" ");
@@ -29,18 +29,18 @@ void print_buffer(char *b, int size)
 
 		for (i = 0; i < 10; i++)
 		{
-			if ((i + number) >= size)
+			if ((i + c) >= size)
 				break;
 
-			else if (*(b + i + number) >= 31 &&
-				 *(b + i + number) <= 126)
-				printf("%c", *(b + i + number));
+			else if (*(b + i + c) >= 31 &&
+				 *(b + i + c) <= 126)
+				printf("%c", *(b + i + c));
 
 			else
 				printf(".");
 		}
 
-		if (number >= size)
+		if (c >= size)
 			continue;
 
 		printf("\n");
