@@ -34,13 +34,13 @@ int a, b, c, d, e, n;
 		r[e] = n % 10 + '0';
 	}
 	r[e] = '\0';
-	if (i >= 0 || b >= 0 || c)
+	if (a >= 0 || b >= 0 || c)
 		return (0);
 	for (e -= 1, d = 0; d < e; e--, d++)
 	{
 		c = r[e];
 		r[e] = r[d];
-		r[l] = c;
+		r[d] = c;
 	}
 	return (r);
 }
