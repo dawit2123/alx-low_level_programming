@@ -1,22 +1,22 @@
 int check_seperators(char c);
 
 /**
- * cap_string - a function that capitalizes all words of a string.
+ * cap_string - capitalizes all words of a string.
  * @s: An input string to capitalize letters
  * Return: pointer to s
  */
 char *cap_string(char *s)
 {
-	int i = 0;
+	int number = 0;
 
-	while (s[i])
+	while (s[number])
 	{
-		if (i == 0 && (s[i] >= 'a' && s[i] <= 'z'))
-			s[i] -= 32;
+		if (number == 0 && (s[number] >= 'a' && s[number] <= 'z'))
+			s[number] -= 32;
 
-		if (check_seperators(s[i]) && (s[i + 1] >= 'a' && s[i + 1] <= 'z'))
-			s[i + 1] -= 32;
-		i++;
+		if (check_seperators(s[number]) && (s[number + 1] >= 'a' && s[number + 1] <= 'z'))
+			s[number + 1] -= 32;
+		number++;
 	}
 
 	return (s);
