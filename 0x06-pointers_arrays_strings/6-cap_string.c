@@ -1,7 +1,7 @@
 int check_seperators(char c);
 
 /**
- * cap_string - a function that capitalizes all words of a string.
+ * cap_string - capitalizes all words of a string.
  * @s: An input string to capitalize letters
  * Return: pointer to s
  */
