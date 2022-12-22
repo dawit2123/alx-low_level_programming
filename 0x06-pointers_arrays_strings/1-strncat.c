@@ -9,20 +9,20 @@
  */
 char *_strncat(char *dest, char *src, int n)
 {
-	int srclength = 0, i = 0;
-	char *val = dest, *start = src;
+	int srclen = 0, i = 0;
+	char *temp = dest, *start = src;
 
 	while (*src)
 	{
-		srclength++;
+		srclen++;
 		src++;
 	}
 
 	while (*dest)
 		dest++;
 
-	if (n > srclength)
-		n = srclength;
+	if (n > srclen)
+		n = srclen;
 
 	src = start;
 
@@ -30,5 +30,5 @@ char *_strncat(char *dest, char *src, int n)
 		*dest++ = *src++;
 
 	*dest = '\0';
-	return (val);
+	return (temp);
 }
