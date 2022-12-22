@@ -2,26 +2,26 @@
 #include <stdio.h>
 
 /**
- * print_buffer - a function that prints a buffer
+ * print_buffer - Prints a buffer
  * @b: char
  * @size: int
  * Return:void
  */
 void print_buffer(char *b, int size)
 {
-	int c, i;
+	int x, i;
 
-	for (c = 0; c < size; c += 10)
+	for (x = 0; x < size; x += 10)
 	{
-		printf("%08c: ", c);
+		printf("%08x: ", x);
 
 		for (i = 0; i < 10; i++)
 		{
-			if ((i + c) >= size)
+			if ((i + x) >= size)
 				printf("  ");
 
 			else
-				printf("%02c", *(b + i + c));
+				printf("%02x", *(b + i + x));
 
 			if ((i % 2) != 0 && i != 0)
 				printf(" ");
@@ -29,18 +29,18 @@ void print_buffer(char *b, int size)
 
 		for (i = 0; i < 10; i++)
 		{
-			if ((i + c) >= size)
+			if ((i + x) >= size)
 				break;
 
-			else if (*(b + i + c) >= 31 &&
-				 *(b + i + c) <= 126)
-				printf("%c", *(b + i + c));
+			else if (*(b + i + x) >= 31 &&
+				 *(b + i + x) <= 126)
+				printf("%c", *(b + i + x));
 
 			else
 				printf(".");
 		}
 
-		if (c >= size)
+		if (x >= size)
 			continue;
 
 		printf("\n");
