@@ -14,4 +14,4 @@ Scope of variables
 <br>
 What are the gcc flags -Wall -Werror -pedantic -Wextra -std=gnu89
 <br>
-What are header files and how to to use them with #include.
+What are header files and how to to use them with #include
