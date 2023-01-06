@@ -8,7 +8,7 @@ What is a function and how do you use functions
 <br>
 What is the difference between a declaration and a definition of a function
 <br>
-What is a prototype
+What is a prototype.
 <br>
 Scope of variables
 <br>
