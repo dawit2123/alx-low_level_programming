@@ -3,7 +3,7 @@
 
 /**
  * main - function that prints the addition of positive numbers,
- *        followed by a new line.
+ *        followed by a new line
  * @argc: The number of arguments passed to the program.
  * @argv: An array of pointers to the arguments.
  *
