@@ -3,7 +3,7 @@
  * main - the entry point for program
  *
  * @argc: count of args present
- * @argv: array of char * pointing to args
+ * @argv: array of char * pointing to args.
  *
  * Return: always 0 (success)
  */
