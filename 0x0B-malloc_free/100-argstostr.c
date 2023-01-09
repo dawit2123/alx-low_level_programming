@@ -28,7 +28,7 @@ char *argstostr(int ac, char **av)
 	{
 		for (var3 = 0; av[var2][var3] != '\0'; var3++)
 		{
-			var1[a] = av[var2][var3];
+			var1[var7] = av[var2][var3];
 			var7++;
 		}
 		var1[var7++] = '\n';
