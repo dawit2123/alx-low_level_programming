@@ -2,18 +2,18 @@
 #include <stdlib.h>
 #include <stdio.h>
 /**
- *free_grid - a function that frees a 2 dimensional grid
+ *free_grid -  frees a 2 dimensional grids.
  *@grid : array
  *@height : int
  *Return: 0
  */
 void free_grid(int **grid, int height)
 {
-	int i;
+	int j;
 
-	for (i = 0; i < height; i++)
+	for (j = 0; j < height; j++)
 	{
-		free(grid[i]);
+		free(grid[j]);
 	}
 	free(grid);
 }
