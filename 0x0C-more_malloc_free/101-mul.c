@@ -4,7 +4,7 @@
 #include <ctype.h>
 
 /**
- * _isnumber - checks if string is number
+ * _isnumber - a function that checks if string is number
  * @s: strin
  * Return: 1 if number, 0 if not
  */
