@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 /**
- * _realloc - Reallocates a memory block using malloc and free.
+ * _realloc - a function that reallocates a memory block using malloc and free
  * @ptr: A pointer to the memory previously allocated.
  * @old_size: The size in bytes of the allocated space for ptr.
  * @new_size: The size in bytes for the new memory block.
@@ -13,21 +13,21 @@
  */
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
-	void *mem;
-	char *ptr_copy, *filler;
-	unsigned int index;
+	void *memory;
+	char *ptr_copy, *value;
+	unsigned int index_of_mem;
 
 	if (new_size == old_size)
 		return (ptr);
 
 	if (ptr == NULL)
 	{
-		mem = malloc(new_size);
+		memory = malloc(new_size);
 
-		if (mem == NULL)
+		if (memory == NULL)
 			return (NULL);
 
-		return (mem);
+		return (memory);
 	}
 
 	if (new_size == 0 && ptr != NULL)
@@ -37,19 +37,19 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	}
 
 	ptr_copy = ptr;
-	mem = malloc(sizeof(*ptr_copy) * new_size);
+	memory = malloc(sizeof(*ptr_copy) * new_size);
 
-	if (mem == NULL)
+	if (memory == NULL)
 	{
 		free(ptr);
 		return (NULL);
 	}
 
-	filler = mem;
+	value = memory;
 
-	for (index = 0; index < old_size && index < new_size; index++)
-		filler[index] = *ptr_copy++;
+	for (index_of_mem = 0; index_of_mem < old_size && index_of_mem < new_size; index_of_mem++)
+		value[index_of_mem] = *ptr_copy++;
 
 	free(ptr);
-	return (mem);
+	return (memory);
 }
