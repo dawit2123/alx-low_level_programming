@@ -11,8 +11,8 @@
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	char *str;
-	unsigned int i, j, length1, length2;
+	char *stri;
+	unsigned int x, y, length1, length2;
 
 /*Check if the strings passed are null*/
 	if (s1 == NULL)
@@ -27,21 +27,21 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	for (length2 = 0; s2[length2] != '\0'; length2++)
 		;
 /*Memory reservation-for case 1 & 2.*/
-	str = malloc(length1 + n + 1);
-	if (str == NULL)
+	stri = malloc(length1 + n + 1);
+	if (stri == NULL)
 	{
 		return (NULL);
 	}
-/*Copy first string into str.*/
-	for (i = 0; s1[i] != '\0'; i++)
-		str[i] = s1[i];
-/*copy second stringg into str.*/
-	for (j = 0; j < n; j++)
+/*Copy first string into stri.*/
+	for (x = 0; s1[x] != '\0'; x++)
+		stri[x] = s1[x];
+/*copy second stringg into stri.*/
+	for (y = 0; y < n; y++)
 	{
-		str[i] = s2[j];
-		i++;
+		stri[x] = s2[x];
+		x++;
 	}
 
-	str[i] = '\0';
-	return (str);
+	stri[x] = '\0';
+	return (stri);
 }
