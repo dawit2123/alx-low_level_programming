@@ -1,128 +1,91 @@
-#include "main.h"
+#include <string.h>
 #include <stdlib.h>
 #include <stdio.h>
 #include <ctype.h>
+
 /**
- * _is_zero - a program that multiplies two positive numbers.
- * @argv: argument vector.
- *
- * Return: no return.
+ * _isnumber - checks if string is number
+ * @s: strin
+ * Return: 1 if number, 0 if not
  */
 
-void _is_zero(char *argv[])
+int _isnumber(char *s)
 {
-	int i, number1 = 1, number2 = 1;
+	int i, chec, d;
 
-	for (i = 0; argv[1][i]; i++)
-		if (argv[1][i] != '0')
+	d = 0, chec = 1;
+	for (i = 0; *(s + i) != 0; i++)
+	{
+		d = isdigit(*(s + i));
+		if (d == 0)
 		{
-			number1 = 0;
+			chec = 0;
 			break;
 		}
-
-	for (i = 0; argv[2][i]; i++)
-		if (argv[2][i] != '0')
-		{
-			number2 = 0;
-			break;
-		}
-
-	if (number1 == 1 || number2 == 1)
-	{
-		printf("0\n");
-		exit(0);
 	}
+	return (chec);
 }
 
 /**
- * _initialize_array - set memery to zero in a new array
- * @ar: char array.
- * @lar: length of the char array.
- *
- * Return: pointer of a char array.
+ * _callocX - reserves memory initialized to 0
+ * @nmemb: # of bytes
+ * Return: pointer
  */
 
-char *_initialize_array(char *ar, int lar)
+char *_callocX(unsigned int nmemb)
 {
-	int i = 0;
+	unsigned int i;
+	char *p;
 
-	for (i = 0; i < lar; i++)
-		ar[i] = '0';
-	ar[lar] = '\0';
-	return (ar);
+	p = malloc(nmemb + 1);
+	if (p == 0)
+		return (0);
+	for (i = 0; i < nmemb; i++)
+		p[i] = '0';
+	p[i] = '\0';
+	return (p);
 }
 
 /**
- * _checknum - determines length of the number
- * and checks if number is in base 10.
- * @argv: arguments vector.
- * @n: row of the array.
- *
- * Return: length of the number.
+ * main - program that multiplies two positive numbers.
+ * @argc: count
+ * @argv: vector
+ * Return: output
  */
 
-int _checknum(char *argv[], int n)
+int main(int argc, char **argv)
 {
-	int num3;
+	int i, j, l1, l2, lful, mul, add, ten, ten2, tl, zer = 0;
+	char *res;
 
-	for (num3 = 0; argv[n][num3]; num3++)
-		if (!isdigit(argv[n][num3]))
-		{
-			printf("Error\n");
-			exit(98);
-		}
-
-	return (num3);
-}
-
-/**
- * main - Entry point.
- * a program that multiplies two positive numbers.
- * @argc: number of arguments.
- * @argv: arguments vector.
- *
- * Return: 0 - success.
- */
-int main(int argc, char *argv[])
-{
-	int num1, num2, lnout, sum, suml, i, j, k, caus;
-	char *ch;
-
-	if (argc != 3)
+	if (argc != 3 || _isnumber(argv[1]) == 0 || _isnumber(argv[2]) == 0)
 		printf("Error\n"), exit(98);
-	num1 = _checknum(argv, 1), num2 = _checknum(argv, 2);
-	_is_zero(argv), lch = num1 + num2, ch = malloc(lch + 1);
-	if (ch == NULL)
+	if (atoi(argv[1]) == 0 || atoi(argv[2]) == 0)
+		printf("0\n"), exit(0);
+	l1 = strlen(argv[1]), l2 = strlen(argv[2]);
+	lful = l1 + l2;
+	res = _callocX(lful);
+	if (res == 0)
 		printf("Error\n"), exit(98);
-	ch = _initialize_array(ch, lch);
-	k = lch - 1, i = num1 - 1, j = num2 - 1, caus = suml = 0;
-	for (; k >= 0; k--, i--)
+	for (i = l2 - 1; i >= 0; i--)
 	{
-		if (i < 0)
+		ten = 0, ten2 = 0;
+		for (j = l1 - 1; j >= 0; j--)
 		{
-			if (suml > 0)
-			{
-				sum = (ch[k] - '0') + suml;
-				if (sum > 9)
-					ch[k - 1] = (sum / 10) + '0';
-				ch[k] = (sum % 10) + '0';
-			}
-			i = num1 - 1, j--, suml = 0, caus++, k = lch - (1 + caus);
+			tl = i + j + 1;
+			mul = (argv[1][j] - '0') * (argv[2][i] - '0') + ten;
+			ten =  mul / 10;
+			add = (res[tl] - '0') + (mul % 10) + ten2;
+			ten2 = add / 10;
+			res[tl] = (add % 10) + '0';
 		}
-		if (j < 0)
-		{
-			if (ch[0] != '0')
-				break;
-			lch--;
-			free(ch), ch = malloc(lch + 1), ch = _initialize_array(ch, lch);
-			k = lch - 1, i = num1 - 1, j = num2 - 1, caus = suml = 0;
-		}
-		if (j >= 0)
-		{
-			sum = ((argv[1][i] - '0') * (argv[2][j] - '0')) + (ch[k] - '0') + suml;
-			suml = sum / 10, ch[k] = (sum % 10) + '0';
-		}
+		res[tl - 1] = (ten + ten2) + '0';
 	}
-	printf("%s\n", ch);
+	if (res[0] == '0')
+		zer = 1;
+	for (; zer < lful; zer++)
+		printf("%c", res[zer]);
+	printf("\n");
+	free(res);
 	return (0);
 }
