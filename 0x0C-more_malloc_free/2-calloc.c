@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 /**
- * *_memset - fills memory with a constant byte.
+ * *_memset - a function that allocates memory for an array, using malloc
  * @s: pointer to put the constant
  * @b: constant
  * @n: max bytes to use
@@ -11,12 +11,12 @@
 
 char *_memset(char *s, char b, unsigned int n)
 {
-char *ptr = s;
+char *poin = s;
 
 while (n--)
 	*s++ = b;
 
-return (ptr);
+return (poin);
 }
 
 /**
