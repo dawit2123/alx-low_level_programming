@@ -13,7 +13,7 @@ void print_elem(int elem)
 }
 
 /**
- *  * print_elem_hex - a function that prints an integer, in hexadecimal
+ *  * print_elem_hex - a function that prints an integer, in hexadecimal.
  *   * @elem: the integer to print
  *    *
  *     * Return: Nothing.
