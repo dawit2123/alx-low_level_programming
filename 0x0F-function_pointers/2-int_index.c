@@ -14,7 +14,7 @@ int int_index(int *array, int size, int (*cmp)(int))
 
 	if (size > 0 && array && cmp)
 	{
-		for (num1 = 0; num1 < snum1ze; num1++)
+		for (num1 = 0; num1 < size; num1++)
 		{
 			num2 = cmp(array[num1]);
 			if (num2)
