@@ -3,7 +3,7 @@
 #include <stdlib.h>
 
 /**
- * op_add - a function that adds a and b
+ * op_add - adds a and b
  * @a: first number
  * @b: second number
  *

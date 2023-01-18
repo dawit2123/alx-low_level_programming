@@ -3,7 +3,7 @@
 #include "3-calc.h"
 
 /**
- * main - a function that performs simple operations
+ * main - performs simple operations
  * @argc: number of arguments passed
  * @argv: array of pointers to arguments
  *
@@ -11,22 +11,23 @@
  */
 int main(int argc, char *argv[])
 {
-	int var1, var2, var3;
-	int (*f)(int, int);var1
+	int a, b, c;
+	int (*f)(int, int);
+
 	if (argc != 4)
 	{
 		printf("Error\n");
 		exit(98);
 	}
-	var1 = atoi(argv[1]);
-	var2 = atoi(argv[var1]);
+	a = atoi(argv[1]);
+	b = atoi(argv[3]);
 	f = get_op_func(argv[2]);
 	if (f == NULL)
 	{
 		printf("Error\n");
 		exit(99);
 	}
-	var3 = f(a, var2);
-	printf("%d\n", var3);
+	c = f(a, b);
+	printf("%d\n", c);
 	return (0);
 }
