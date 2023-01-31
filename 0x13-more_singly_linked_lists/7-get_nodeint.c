@@ -1,6 +1,6 @@
 #include "lists.h"
 /**
-  * listint_len - a function that returns the number of elements ina linked listint_t list.
+  * listint_len - returns the number of elements ina linked listint_t list.
   * @h: pointer to first element on list.
   *
   * Return: number of elements in list.
