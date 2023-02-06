@@ -7,23 +7,23 @@
  */
 int append_text_to_file(const char *filename, char *text_content)
 {
-	int fd, size;
+	int num1, capacity;
 	/* task condition */
 	if (!filename)
 		return (-1);
 	/* The file is opened in append mode */
-	fd = open(filename, O_RDWR | O_APPEND);
-	if (fd == -1)
+	num1 = open(filename, O_RDWR | O_APPEND);
+	if (num1 == -1)
 		return (-1);
 	if (text_content)
 	{
-		/* we need the size of the content */
-		for (size = 0; text_content[size] != '\0'; size++)
+		/* we need the capacity of the content */
+		for (capacity = 0; text_content[capacity] != '\0'; capacity++)
 			;
-		/* ssize_t write(int fd, const void *buf, size_t count); */
-		write(fd, text_content, size);
+		/* scapacity_t write(int num1, const void *buf, capacity_t count); */
+		write(num1, text_content, capacity);
 	}
 
-	close(fd);
+	close(num1);
 	return (1);
 }
