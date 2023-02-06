@@ -9,7 +9,7 @@ void error_read(char *argv)
 	exit(98);
 }
 /**
- * error_write - error write
+ * error_write - error write.
  * @argv: error write
  */
 void error_write(char *argv)
